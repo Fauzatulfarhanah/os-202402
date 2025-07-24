@@ -44,7 +44,7 @@ $ $
 - Makefile error karena penggunaan spasi bukan tab
 - Output ptest tidak rapi karena proses mencetak secara bersamaan tanpa sinkronisasi
 
-📚 Referensi
+📚 Referensi  
 Buku xv6 MIT: https://pdos.csail.mit.edu/6.828/2018/xv6/book-rev11.pdf  
 Repositori xv6-public: https://github.com/mit-pdos/xv6-public  
 MIT xv6-labs (Instruksi menambah system call): https://pdos.csail.mit.edu/6.828/2021/labs/syscall.h
