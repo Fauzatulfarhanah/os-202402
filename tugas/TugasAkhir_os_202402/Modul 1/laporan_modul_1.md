@@ -1,11 +1,11 @@
-📝 Laporan Tugas Akhir Modul 1 – System Call dan Instrumentasi Kernel
+📝 Laporan Tugas Akhir Modul 1 – System Call dan Instrumentasi Kernel  
 Mata Kuliah: Sistem Operasi Semester: Genap / Tahun Ajaran 2024–2025
 
 Nama  : Fauzatul Farhanah
 NIM   : 240202834
 Kelas : 2IKRA
 
-📌 Deskripsi Singkat Tugas
+📌 Deskripsi Singkat Tugas  
 Modul 1 – System Call dan Instrumentasi Kernel: Menambahkan dua system call baru, yaitu getpinfo() untuk melihat proses yang aktif dan getReadCount() untuk menghitung jumlah pemanggilan read() sejak boot.
 
 🛠️ Rincian Implementasi
@@ -22,21 +22,20 @@ Modul 1 – System Call dan Instrumentasi Kernel: Menambahkan dua system call ba
 - read(): menambah counter readcount setiap kali read() dipanggil
 - getreadcount(): menguji system call baru yang digunakan untuk mengambil nilai dari counter readcount
   
-📷 Hasil Uji
-📍 Output ptest
-$ ptest
-PID     MEM     NAME
-1       12288   init
-2       16384   sh
+📷 Hasil Uji  
+📍 Output ptest  
+$ ptest  
+PID     MEM     NAME  
+1       12288   init  
+2       16384   sh  
 3       12288   ptest
 
-📍 Output rtest
-$ rtest
-Read Count Sebelum: 12
-hello
-Read Count Setelah: 13
-$ $ 
-
+📍 Output rtest  
+$ rtest  
+Read Count Sebelum: 12  
+hello  
+Read Count Setelah: 13  
+$ $   
 <img width="1920" height="1080" alt="Screenshot (563)" src="https://github.com/user-attachments/assets/3d4bdfa9-c3dd-4bd4-9360-db44b56fe338" />
 
 ⚠️ Kendala yang Dihadapi
