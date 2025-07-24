@@ -1,8 +1,8 @@
 📝 Laporan Tugas Akhir Modul 1 – System Call dan Instrumentasi Kernel  
 Mata Kuliah: Sistem Operasi Semester: Genap / Tahun Ajaran 2024–2025
 
-Nama  : Fauzatul Farhanah
-NIM   : 240202834
+Nama  : Fauzatul Farhanah  
+NIM   : 240202834  
 Kelas : 2IKRA
 
 📌 Deskripsi Singkat Tugas  
