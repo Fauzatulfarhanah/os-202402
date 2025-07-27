@@ -14,7 +14,7 @@ Modul 1 – System Call dan Instrumentasi Kernel: Menambahkan dua system call ba
 - Menambahkan dua system call baru di file `sysproc.c` dan `syscall.c`
 - Mengedit `user.h` `usys.S` `syscall.h` untuk mendaftarkan syscall
 - Menambahkan struktur struct pinfo di `proc.h`
-- Menambahkan variabel global int readcount = 0; di `proc.c`
+- Menambahkan variabel global `int readcount = 0;` di `proc.c`
 - Menambahkan counter readcount di `sysfile.c`
 - Sinkronisasi `ptable.lock` di `sysproc.c`
 - Membuat dua program uji yaitu `ptest.c` dan `rtest.c`
