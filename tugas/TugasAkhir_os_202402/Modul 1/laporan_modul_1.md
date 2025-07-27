@@ -10,7 +10,7 @@ Modul 1 – System Call dan Instrumentasi Kernel: Menambahkan dua system call ba
 
 ## 🛠️ Rincian Implementasi
 - Menambahkan dua system call baru di file `sysproc.c` dan `syscall.c`
-- Mengedit `user.h` `usys.S``, ``syscall.h` untuk mendaftarkan syscall
+- Mengedit `user.h` `usys.S` `syscall.h` untuk mendaftarkan syscall
 - Menambahkan struktur struct pinfo di `proc.h`
 - Menambahkan variabel global int readcount = 0; di `proc.c`
 - Menambahkan counter readcount di kernel
@@ -39,7 +39,7 @@ $ $
 ```
 📷 screenshot 
 
-<img width="1904" height="1009" alt="Screenshot 2025-07-27 095715" src="https://github.com/user-attachments/assets/34eed1ec-e1d3-4e50-b4ce-57805446fe8f" />
+![Hasil Testing](https://example.com/path/to/screenshot.png)
 
 ## ⚠️ Kendala yang Dihadapi 
 - `readcount` tidak dikenali yang menyebabkan **error undefined reference**
