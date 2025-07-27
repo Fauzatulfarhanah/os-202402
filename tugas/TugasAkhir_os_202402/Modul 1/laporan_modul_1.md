@@ -5,6 +5,8 @@ Nama  : Fauzatul Farhanah
 NIM   : 240202834  
 Kelas : 2IKRA
 
+---
+
 ## 📌 Deskripsi Singkat Tugas  
 Modul 1 – System Call dan Instrumentasi Kernel: Menambahkan dua system call baru, yaitu getpinfo() untuk melihat proses yang aktif dan getReadCount() untuk menghitung jumlah pemanggilan read() sejak boot.
 
@@ -13,13 +15,19 @@ Modul 1 – System Call dan Instrumentasi Kernel: Menambahkan dua system call ba
 - Mengedit `user.h` `usys.S` `syscall.h` untuk mendaftarkan syscall
 - Menambahkan struktur struct pinfo di `proc.h`
 - Menambahkan variabel global int readcount = 0; di `proc.c`
-- Menambahkan counter readcount di kernel
-- Membuat dua program uji yaitu ptest.c dan rtest.c
+- Menambahkan counter readcount di `sysfile.c`
+- Sinkronisasi `ptable.lock` di `sysproc.c`
+- Membuat dua program uji yaitu `ptest.c` dan `rtest.c`
+- Mendaftarkan program uji ke `Makefile`
+  
+---
 
 ## ✅ Uji Fungsionalitas
 - `ptest`: untuk menguji `getpinfo()`
 - `rtest`: untuk menguji `getReadCount()`
-  
+
+---
+
 ## 📷 Hasil Uji  
 📍 Output ptest
 ```
@@ -40,12 +48,15 @@ $ $
 📷 screenshot  
 <img width="1904" height="1009" alt="Screenshot 2025-07-27 095715" src="https://github.com/user-attachments/assets/c0ef9a2a-aad1-4ce3-86f9-a982ac6a9424" />
 
+---
 
 ## ⚠️ Kendala yang Dihadapi 
 - `readcount` tidak dikenali yang menyebabkan **error undefined reference**
 - Salah menambahkan field `priority` pada `struct proc` sehingga menyebabkan gagal kompilasi
 - **Makefile error** karena penggunaan spasi bukan tab
 - Output ptest tidak rapi karena proses mencetak secara bersamaan tanpa sinkronisasi
+
+---
 
 ## 📚 Referensi  
 Buku xv6 MIT: https://pdos.csail.mit.edu/6.828/2018/xv6/book-rev11.pdf  
