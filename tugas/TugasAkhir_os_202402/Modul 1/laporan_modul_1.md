@@ -20,7 +20,7 @@ Modul 1 – System Call dan Instrumentasi Kernel: Menambahkan dua system call ba
 - ptest: untuk menguji getpinfo()
 - rtest: untuk menguji getReadCount()
   
-###### 📷 Hasil Uji  
+### 📷 Hasil Uji  
 📍 Output 'ptest' 
 ```
 $ ptest  
@@ -29,23 +29,23 @@ PID     MEM     NAME
 2       16384   sh  
 3       12288   ptest
 
-📍 Output 'rtest'
-```  
+📍 Output 'rtest' 
 $ rtest  
 Read Count Sebelum: 12  
 hello  
 Read Count Setelah: 13  
 $ $   
+```
+📷 screenshot  
+<img width="1904" height="1009" alt="Screenshot 2025-07-27 095715" src="https://github.com/user-attachments/assets/34eed1ec-e1d3-4e50-b4ce-57805446fe8f" />
 
-<img width="1920" height="1080" alt="Screenshot (563)" src="https://github.com/user-attachments/assets/3d4bdfa9-c3dd-4bd4-9360-db44b56fe338" />
-
-#######⚠️ Kendala yang Dihadapi
+####⚠️ Kendala yang Dihadapi
 - readcount tidak dikenali yang menyebabkan error undefined reference
 - Salah menambahkan field priority pada struct proc sehingga menyebabkan gagal kompilasi
 - Makefile error karena penggunaan spasi bukan tab
 - Output ptest tidak rapi karena proses mencetak secara bersamaan tanpa sinkronisasi
 
-######## 📚 Referensi  
+#### 📚 Referensi  
 Buku xv6 MIT: https://pdos.csail.mit.edu/6.828/2018/xv6/book-rev11.pdf  
 Repositori xv6-public: https://github.com/mit-pdos/xv6-public  
 MIT xv6-labs (Instruksi menambah system call): https://pdos.csail.mit.edu/6.828/2021/labs/syscall.h
