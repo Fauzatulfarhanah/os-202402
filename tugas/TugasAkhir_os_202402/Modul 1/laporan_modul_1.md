@@ -37,9 +37,8 @@ hello
 Read Count Setelah: 13  
 $ $   
 ```
-📷 screenshot 
-
-![Hasil Testing](<img width="1904" height="1009" alt="Screenshot 2025-07-27 095715" src="https://github.com/user-attachments/assets/c0ef9a2a-aad1-4ce3-86f9-a982ac6a9424" />
+📷 screenshot  
+<img width="1904" height="1009" alt="Screenshot 2025-07-27 095715" src="https://github.com/user-attachments/assets/c0ef9a2a-aad1-4ce3-86f9-a982ac6a9424" />
 
 
 ## ⚠️ Kendala yang Dihadapi 
