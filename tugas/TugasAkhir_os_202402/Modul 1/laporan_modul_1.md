@@ -10,6 +10,8 @@ Kelas : 2IKRA
 ## 📌 Deskripsi Singkat Tugas  
 Modul 1 – System Call dan Instrumentasi Kernel: Menambahkan dua system call baru, yaitu getpinfo() untuk melihat proses yang aktif dan getReadCount() untuk menghitung jumlah pemanggilan read() sejak boot.
 
+---
+
 ## 🛠️ Rincian Implementasi
 - Menambahkan dua system call baru di file `sysproc.c` dan `syscall.c`
 - Mengedit `user.h` `usys.S` `syscall.h` untuk mendaftarkan syscall
