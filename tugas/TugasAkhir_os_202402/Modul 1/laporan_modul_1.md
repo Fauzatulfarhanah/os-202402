@@ -19,8 +19,6 @@ Modul 1 – System Call dan Instrumentasi Kernel: Menambahkan dua system call ba
 ✅ Uji Fungsionalitas
 - ptest: untuk menguji getpinfo()
 - rtest: untuk menguji getReadCount()
-- read(): menambah counter readcount setiap kali read() dipanggil
-- getreadcount(): menguji system call baru yang digunakan untuk mengambil nilai dari counter readcount
   
 📷 Hasil Uji  
 📍 Output ptest  
