@@ -48,7 +48,7 @@ Read Count Setelah: 13
 $ $   
 ```
 📷 screenshot  
-![Hasil ptest](<img width="1080" height="759" alt="Screenshot 2025-07-27 095715" src="https://github.com/user-attachments/assets/40b3f6c8-3a5a-4346-b56a-f0699013b8f3" />)
+<img width="1080" height="759" alt="Screenshot 2025-07-27 095715" src="https://github.com/user-attachments/assets/40b3f6c8-3a5a-4346-b56a-f0699013b8f3" />
 
 
 ---
