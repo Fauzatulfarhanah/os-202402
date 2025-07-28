@@ -7,7 +7,7 @@ Kelas : 2IKRA
 ---
 
 ## 📌 Deskripsi Singkat Tugas 
-Memodifikasi algoritma penjadwalan proses di sistem operasi xv6-public dari yang awalnya menggunakan metode Round Robin menjadi Priority Scheduling Non-Preemptive. Dalam perubahannya, ditambahkan field `priority` pada setiap proses untuk menyimpan nilai prioritas, serta pembuatan system call baru bernama `set_priority(int)` yang memungkinkan pengguna mengatur prioritas proses secara langsung. Selain itu, fungsi scheduler dimodifikasi agar selalu memilih dan menjalankan proses `RUNNABLE` dengan prioritas tertinggi (yaitu proses dengan nilai prioritas paling kecil).  
+Memodifikasi algoritma penjadwalan proses di sistem operasi xv6-public dari yang awalnya menggunakan metode Round Robin menjadi Priority Scheduling Non-Preemptive. Dalam perubahannya, ditambahkan field `priority` pada setiap proses untuk menyimpan nilai prioritas, serta pembuatan system call baru bernama `set_priority(int)` yang memungkinkan pengguna mengatur prioritas proses secara langsung. Selain itu, fungsi `scheduler` dimodifikasi agar supaya menjalankan proses `RUNNABLE` dengan prioritas tertinggi (yaitu proses dengan nilai prioritas paling kecil).  
 
 ---
 
