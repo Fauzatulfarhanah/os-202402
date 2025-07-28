@@ -1,6 +1,5 @@
 # 📝 Laporan Tugas Akhir Modul 2 — Penjadwalan CPU Lanjutan (Priority Scheduling Non-Preemptive)  
-Mata Kuliah: Sistem Operasi Semester: Genap / Tahun Ajaran 2024–2025
-
+Mata Kuliah: Sistem Operasi Semester: Genap / Tahun Ajaran 2024–2025  
 Nama  : Fauzatul Farhanah  
 NIM   : 240202834  
 Kelas : 2IKRA
@@ -13,16 +12,16 @@ memodifikasi algoritma penjadwalan proses di sistem operasi xv6-public dari yang
 
 ---
 
-## 🛠️ Rincian Implementasi
-⦁	Modifikasi pada fungsi scheduler() di `proc.c` untuk mengganti algoritma Round Robin menjadi Non-Preemptive Priority Scheduling
-⦁	Menambahkan Field priority pada `Struct proc` di file `proc.h`
-⦁	Menambahkan fungsi sys_set_priority() di sysproc.c untuk mengambil argumen prioritas dari user dan menyimpannya ke field priority
-⦁	Menambahkan definisi syscall `SYS_set_priority` dengan nomor 22 di `syscall.h`
-⦁	Menambahkan deklarasi eksternal dan entri `syscall set_priority` di `syscall.c`
-⦁	menambah deklarasi `int set_priority(int priority);`  di user.h
-⦁	Menambahkan deklarasi `SYSCALL(set_priority)` di `usys.S` untuk mendefinisikan syscall
-⦁	Menambahkan implementasi fungsi sys_set_priority() di sysproc.c untuk mengatur nilai prioritas proses melalui system call
-⦁	Membuat program uji ptest.c sebagai untuk memverifikasi proses dengan prioritas lebih tinggi dijalankan lebih lebih dulu oleh scheduler
+## 🛠️ Rincian Implementasi  
+⦁	Modifikasi pada fungsi scheduler() di `proc.c` untuk mengganti algoritma Round Robin menjadi Non-Preemptive Priority Scheduling  
+⦁	Menambahkan Field priority pada `Struct proc` di file `proc.h`  
+⦁	Menambahkan fungsi sys_set_priority() di sysproc.c untuk mengambil argumen prioritas dari user dan menyimpannya ke field priority  
+⦁	Menambahkan definisi syscall `SYS_set_priority` dengan nomor 22 di `syscall.h`  
+⦁	Menambahkan deklarasi eksternal dan entri `syscall set_priority` di `syscall.c`  
+⦁	menambah deklarasi `int set_priority(int priority);`  di user.h  
+⦁	Menambahkan deklarasi `SYSCALL(set_priority)` di `usys.S` untuk mendefinisikan syscall  
+⦁	Menambahkan implementasi fungsi sys_set_priority() di sysproc.c untuk mengatur nilai prioritas proses melalui system call  
+⦁	Membuat program uji ptest.c sebagai untuk memverifikasi proses dengan prioritas lebih tinggi dijalankan lebih lebih dulu oleh scheduler  
 ⦁	menambahkan `ptest` ke `Makefile` bagian `UPROGS=\`
 
 ---
@@ -49,7 +48,7 @@ $
 ---
 
 ## ⚠️ Kendala yang Dihadapi 
-⦁	Output dari `ptest` sempat tidak sesuai harapan karena proses cetak `(printf)` dari beberapa proses tumpang tindih akibat eksekusi paralel tanpa sinkronisasi output
+⦁	Output dari `ptest` sempat tidak sesuai harapan karena proses cetak `(printf)` dari beberapa proses tumpang tindih akibat eksekusi paralel tanpa sinkronisasi output  
 ⦁	Awalnya output menunjukkan urutan proses tidak sesuai prioritas karena delay `sleep()` belum diatur dengan benar untuk menghindari tabrakan antar proses.
 
 ---
