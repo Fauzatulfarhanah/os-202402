@@ -12,15 +12,15 @@ Memodifikasi algoritma penjadwalan proses di sistem operasi xv6-public dari yang
 ---
 
 ## 🛠️ Rincian Implementasi  
-⦁	Modifikasi pada fungsi scheduler() di `proc.c` untuk mengganti algoritma Round Robin menjadi Non-Preemptive Priority Scheduling  
-⦁	Menambahkan Field priority pada `Struct proc` di file `proc.h`  
-⦁	Menambahkan fungsi sys_set_priority() di sysproc.c untuk mengambil argumen prioritas dari user dan menyimpannya ke field priority  
+⦁	Modifikasi pada fungsi `scheduler()` di `proc.c` untuk mengganti algoritma Round Robin menjadi Non-Preemptive Priority Scheduling  
+⦁	Menambahkan Field `priority` pada `Struct proc` di file `proc.h`  
+⦁	Menambahkan fungsi `sys_set_priority()` di `sysproc.c` untuk mengambil argumen prioritas dari user dan menyimpannya ke field `priority`  
 ⦁	Menambahkan definisi syscall `SYS_set_priority` dengan nomor 22 di `syscall.h`  
 ⦁	Menambahkan deklarasi eksternal dan entri `syscall set_priority` di `syscall.c`  
 ⦁	menambah deklarasi `int set_priority(int priority);`  di user.h  
 ⦁	Menambahkan deklarasi `SYSCALL(set_priority)` di `usys.S` untuk mendefinisikan syscall  
 ⦁	Menambahkan implementasi fungsi `sys_set_priority()` di `sysproc.c` untuk mengatur nilai prioritas proses melalui system call  
-⦁	Membuat program uji `ptest.c` sebagai untuk memverifikasi proses dengan prioritas lebih tinggi dijalankan lebih lebih dulu oleh `scheduler`  
+⦁	Membuat program uji `ptest.c` untuk memverifikasi proses dengan prioritas lebih tinggi agar dijalankan lebih lebih dulu oleh `scheduler`  
 ⦁	menambahkan `_ptest` ke `Makefile` bagian `UPROGS=\`
 
 ---
