@@ -8,7 +8,7 @@ Kelas : 2IKRA
 
 ## 📌 Deskripsi Singkat Tugas 
 
-memodifikasi algoritma penjadwalan proses di sistem operasi xv6-public dari yang awalnya menggunakan metode Round Robin menjadi Priority Scheduling Non-Preemptive. Dalam perubahannya, ditambahkan field `priority` pada setiap proses untuk menyimpan nilai prioritas, serta pembuatan system call baru bernama `set_priority(int)` yang memungkinkan pengguna mengatur prioritas proses secara langsung. Selain itu, fungsi scheduler dimodifikasi agar selalu memilih dan menjalankan proses RUNNABLE dengan prioritas tertinggi (yaitu proses dengan nilai prioritas paling kecil).  
+memodifikasi algoritma penjadwalan proses di sistem operasi xv6-public dari yang awalnya menggunakan metode Round Robin menjadi Priority Scheduling Non-Preemptive. Dalam perubahannya, ditambahkan field `priority` pada setiap proses untuk menyimpan nilai prioritas, serta pembuatan system call baru bernama `set_priority(int)` yang memungkinkan pengguna mengatur prioritas proses secara langsung. Selain itu, fungsi scheduler dimodifikasi agar selalu memilih dan menjalankan proses `RUNNABLE` dengan prioritas tertinggi (yaitu proses dengan nilai prioritas paling kecil).  
 
 ---
 
@@ -20,9 +20,9 @@ memodifikasi algoritma penjadwalan proses di sistem operasi xv6-public dari yang
 ⦁	Menambahkan deklarasi eksternal dan entri `syscall set_priority` di `syscall.c`  
 ⦁	menambah deklarasi `int set_priority(int priority);`  di user.h  
 ⦁	Menambahkan deklarasi `SYSCALL(set_priority)` di `usys.S` untuk mendefinisikan syscall  
-⦁	Menambahkan implementasi fungsi sys_set_priority() di sysproc.c untuk mengatur nilai prioritas proses melalui system call  
-⦁	Membuat program uji ptest.c sebagai untuk memverifikasi proses dengan prioritas lebih tinggi dijalankan lebih lebih dulu oleh scheduler  
-⦁	menambahkan `ptest` ke `Makefile` bagian `UPROGS=\`
+⦁	Menambahkan implementasi fungsi `sys_set_priority()` di `sysproc.c` untuk mengatur nilai prioritas proses melalui system call  
+⦁	Membuat program uji `ptest.c` sebagai untuk memverifikasi proses dengan prioritas lebih tinggi dijalankan lebih lebih dulu oleh `scheduler`  
+⦁	menambahkan `_ptest` ke `Makefile` bagian `UPROGS=\`
 
 ---
 
