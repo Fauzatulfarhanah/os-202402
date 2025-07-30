@@ -1,16 +1,16 @@
 # 📝 Laporan Tugas Akhir
 
-**Mata Kuliah**: Sistem Operasi
-**Semester**: Genap / Tahun Ajaran 2024–2025
-**Nama**: `<Fauzatul Farhanah>`
-**NIM**: `<240202834>`
+**Mata Kuliah**: Sistem Operasi  
+**Semester**: Genap / Tahun Ajaran 2024–2025  
+**Nama**: `<Fauzatul Farhanah>`  
+**NIM**: `<240202834>`  
 **Modul yang Dikerjakan**: `(Modul 5 – Audit dan Keamanan Sistem (xv6-public))`
 
 ---
 
 ## 📌 Deskripsi Singkat Tugas
 
-* **Modul 5 – Audit dan Keamanan Sistem (xv6-public)**:
+* **Modul 5 – Audit dan Keamanan Sistem (xv6-public)** :
   Modul ini menambahkan fitur audit log pada sistem operasi xv6. Setiap pemanggilan system call akan dicatat secara otomatis. Log hanya bisa dibaca oleh proses dengan PID    1 melalui system call get_audit_log(), sehingga akses log lebih aman dan terlindungi dari proses biasa.
 ---
 
