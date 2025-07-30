@@ -1,17 +1,17 @@
 # 📝 Laporan Tugas Akhir
 
-**Mata Kuliah**: Sistem Operasi
-**Semester**: Genap / Tahun Ajaran 2024–2025
-**Nama**: `<Fauzatul Farhanah>`
-**NIM**: `<240202834>`
+**Mata Kuliah**: Sistem Operasi  
+**Semester**: Genap / Tahun Ajaran 2024–2025  
+**Nama**: `<Fauzatul Farhanah>`  
+**NIM**: `<240202834>`  
 **Modul yang Dikerjakan**:`(Modul 3 – Manajemen Memori Tingkat Lanjut (xv6-public x86))`
 
 ---
 
 ## 📌 Deskripsi Singkat Tugas
 
-* **Modul 3 – Manajemen Memori Tingkat Lanjut (xv6-public x86)**:
- Modul ini berfokus pada optimalisasi manajemen memori di sistem operasi xv6, dengan mengimplementasikan dua fitur penting:
+**Modul 3 – Manajemen Memori Tingkat Lanjut (xv6-public x86)**:  
+Modul ini berfokus pada optimalisasi manajemen memori di sistem operasi xv6, dengan mengimplementasikan dua fitur penting:
 1. Copy-on-Write (CoW) Fork
    Meningkatkan efisiensi fork() dengan menunda penyalinan halaman memori hingga proses melakukan penulisan. Halaman memori awalnya dibagikan dalam mode read-only, dan        hanya disalin saat terjadi page fault akibat operasi tulis. Manajemen memori fisik dikendalikan melalui sistem reference counting.
 2. Shared Memory ala System V
@@ -22,25 +22,33 @@
 ---
 
 ## 🛠️ Rincian Implementasi
+1. Copy-on-Write (CoW) Fork
+   * `vm.c` : Menambahkan array `refcount[]`, fungsi `incref()` dan `decref()` untuk mengelola jumlah referensi halaman fisik, dan memodifikasi `copyuvm()` menjadi              `cowuvm()` untuk mendukung mekanisme Copy-on-Write.
+   * `proc.c` : Mengubah fungsi `fork()` agar menggunakan `cowuvm()` sebagai pengganti `copyuvm()` saat duplikasi page table proses.
+   * `trap.c` : Menambahkan penanganan page fault untuk melakukan salinan halaman (copy) saat proses melakukan penulisan pada halaman bertanda `PTE_COW`.
+   * `mmu.h` : Menambahkan definisi flag `PTE_COW` untuk menandai entri page table yang menggunakan mekanisme Copy-on-Write.
+   * `defs.h` : Menambahkan deklarasi fungsi `incref()` dan `decref()` untuk manajemen `refcount` pada halaman memori fisik.
+   * `cowtest.c` : Membuat program uji `cowtest`.
+   * Mendaftarkan program uji `_cowtest` ke `Makefile`.
 
-* Menambahkan dua system call baru di file `sysproc.c` dan `syscall.c`
-* Mengedit `user.h`, `usys.S`, dan `syscall.h` untuk mendaftarkan syscall
-* Menambahkan struktur `struct pinfo` di `proc.h`
-* Menambahkan counter `readcount` di kernel
-* Membuat dua program uji: `ptest.c` dan `rtest.c`
-  
+2. Shared Memory ala System V
+   * `sysproc.c` : Menambahkan syscall `sys_shmget()` untuk memperoleh satu halaman shared memory berdasarkan key, dan `sys_shmrelease()` untuk mengurangi `refcount` dan       menghapus halaman jika tidak ada proses yang menggunakannya.
+   * `vm.c` : Membuat array `shmtab[]` yang menyimpan informasi key, alamat halaman memori (frame), dan `refcount` untuk mencatat jumlah proses yang mengakses shared           memory.
+   * `syscall.h` : Menambahkan nomor syscall `SYS_shmget` dan `SYS_shmrelease` supaya fungsi bisa dikenali sistem.
+   * `user.h` : Menambahkan deklarasi fungsi `shmget(int)` dan `shmrelease(int)` supaya bisa digunakan oleh program user.
+   * `usys.S` : Menambahkan entri syscall `SYSCALL(shmget)` dan `SYSCALL(shmrelease)` untuk menjembatani pemanggilan dari user space ke kernel.
+   * `syscall.c` : Mendaftarkan `sys_shmget` dan `sys_shmrelease` ke dalam tabel syscall untuk menghubungkan nomor syscall dengan fungsi yang dijalankan.
+   * `shmtest` : Membuat program uji `shmtest`.
+   * Mendaftarkan program uji ke `Makefile` (_`shmtest`).
+
 ---
 
 ## ✅ Uji Fungsionalitas
 
-Tuliskan program uji apa saja yang Anda gunakan, misalnya:
+* `cowtest`: untuk menguji apakah proses fork berjalan dengan mekanisme Copy-on-Write (CoW) tanpa langsung menggandakan seluruh memori.
+* `shmtest`: untuk menguji apakah `shmget()` dapat membagi memori antar proses, dan `shmrelease()` berhasil melepasnya saat tidak digunakan lagi.
 
-* `ptest`: untuk menguji `getpinfo()`
-* `rtest`: untuk menguji `getReadCount()`
-* `cowtest`: untuk menguji fork dengan Copy-on-Write
-* `shmtest`: untuk menguji `shmget()` dan `shmrelease()`
-* `chmodtest`: untuk memastikan file `read-only` tidak bisa ditulis
-* `audit`: untuk melihat isi log system call (jika dijalankan oleh PID 1)
+
 
 ---
 
@@ -74,8 +82,7 @@ B. shmtest
 ---
 
 ## ⚠️ Kendala yang Dihadapi
-- jj
-  
+* 
 
 ---
 
