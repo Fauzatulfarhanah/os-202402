@@ -33,7 +33,7 @@ Memodifikasi kernel xv6 dengan menambahkan dua fitur baru yaitu :
     - Pada `chmodtest.c`, ditambahkan baris `printf(1, "hallo\n");` sebagai indikator awal bahwa program berhasil dieksekusi sebelum melakukan pengujian menggunakan             syscall `chmod()`.
     - Mendaftarkan program uji ke `Makefile`
       
-2. Device Acak (/dev/random)
+3. Device Acak (/dev/random)
    Fitur ini menambahkan device khusus bernama /dev/random yang menghasilkan byte acak saat dibaca,yang menyerupai fungsi random device pada sistem Linux.
    🔧 Modifikasi File:
    - `random.c`: Menyediakan fungsi `randomread()` untuk menghasilkan angka acak.
