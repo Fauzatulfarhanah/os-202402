@@ -29,6 +29,7 @@ Memodifikasi kernel xv6 dengan menambahkan dua fitur baru yaitu :
     - `syscall.h`: Menambahkan `#define SYS_chmod` untuk syscall nomor baru.
     - `defs.h`: Menambahkan deklarasi fungsi `sys_chmod()` agar bisa dipanggil kernel internal.
     - `fs.h`: Menambahkan field baru pada struktur inode untuk menyimpan status writable.
+    - `sleeplock.h` dan `spinlock.h` dimodifikasi dengan penambahan header guard untuk mencegah duplikasi saat kompilasi dan menjaga kestabilan sistem saat file digunakan        di berbagai bagian kernel.
     - `chmodtest.c`: Program pengujian untuk membuat file, mengubah statusnya menjadi read-only, dan mencoba menulis ke file tersebut.
     - Pada `chmodtest.c`, ditambahkan baris `printf(1, "hallo\n");` sebagai indikator awal bahwa program berhasil dieksekusi sebelum melakukan pengujian menggunakan             syscall `chmod()`.
     - Mendaftarkan program uji ke `Makefile`
