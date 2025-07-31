@@ -82,7 +82,12 @@ B. shmtest
 ---
 
 ## ⚠️ Kendala yang Dihadapi
-* 
+* Tidak menambahkan penanganan khusus untuk page fault bertipe `PTE_COW` di `trap()` yang menyebabkan proses langsung dihentikan (panic) saat terjadi penulisan ke halaman hasil `fork()`.
+* Fungsi `fork()` tidak diarahkan ke `cowuvm()` dengan benar, atau gagal menangani error return dari `cowuvm()`, menyebabkan proses anak crash saat dieksekusi.
+* Tidak menghapus modifier `static` pada fungsi `mappages()` menyebabkan fungsi ini tidak bisa digunakan dari file lain seperti `vm.c`
+* Awalnya menggabungkan uji praktikum yang A dengan B jadi satu sehingga banyak error terus menerus karena bentrok , kemudian mencoba untuk modifikasi satu satu dulu baru berhasil,tapi kemudian lupa tidak backup yang modifikasi A lalu isi file modifikasinya hilang, tapi output sudah screenshot.
+* Karena sudah berhasil mengeluarkan output program uji pertama, dilanjutkan untuk memodifikasi fitur ke dua tapi malah jadi berantakan semua isi filenya dan error fatal.
+* Kemudian menghapus semua modifikasi,dan mencoba untuk fokus ke modifikasi program uji ke dua saja, tidak jadi satu dengan yang pertama(A) dan akhirnya berhasil.
 
 ---
 
